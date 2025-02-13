@@ -62,14 +62,14 @@ module.exports = {
       shared: { // Configuration des dépendances partagées
         react: { 
           singleton: true, 
-          requiredVersion: dependencies.react,
-          eager: true // Ajout de eager pour le chargement
+          requiredVersion: false,
+          eager: false
         },
-        'react-dom': { 
-          singleton: true, 
-          requiredVersion: dependencies['react-dom'],
-          eager: true // Ajout de eager pour le chargement
-        },
+        "react-dom": { 
+          singleton: true,
+          requiredVersion: false,
+          eager: false
+        }
       },
     }),
     new HtmlWebpackPlugin({
