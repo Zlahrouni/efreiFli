@@ -9,6 +9,7 @@ import {
   ChevronRight
 } from 'lucide-react';
 import './styles.css';
+import SecuritySection from './security-section';
 
 const Admin = () => {
   const [activeSection, setActiveSection] = useState('personal');
@@ -112,6 +113,8 @@ const Admin = () => {
         return <PersonalInfoSection />;
       case 'payment':
         return <PaymentInfoSection />;
+      case 'security':
+        return <SecuritySection />;
       default:
         return (
           <div className="flex items-center justify-center h-64 text-gray-500">
@@ -156,11 +159,7 @@ const Admin = () => {
           <div className="flex-1">
             <div className="bg-gray-50 rounded-lg p-6">
               {renderSection()}
-              <div className="mt-6 flex justify-end">
-                <button className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">
-                  Sauvegarder les modifications
-                </button>
-              </div>
+              
             </div>
           </div>
         </div>
